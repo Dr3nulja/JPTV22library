@@ -5,6 +5,7 @@
  */
 package jptv22library;
 
+import managers.BookManager;
 import java.util.Scanner;
 
 /**
@@ -25,11 +26,17 @@ class App {
         {
             System.out.println("Select task: ");
             System.out.println("0. Exit");
+            System.out.println("1. Add new book");
             System.out.println("Task number: ");
             int task = scanner.nextInt(); scanner.nextLine();
             switch (task) {
                 case 0:
                     repeat = false;
+                    break;
+                 case 1:
+                    BookManager bookManager;
+                    bookManager = new BookManager(scanner);
+                    bookManager.addBook();
                     break;
                 default:
                     System.out.println("Select task from tasks!");
@@ -39,4 +46,4 @@ class App {
         
     }
     
-}
+} 
